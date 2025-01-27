@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Diabetes Risk Prediction</h1>
+        <form id="prediction-form">
+            <div class="input-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="input-group">
+                <label for="bmi">BMI</label>
+                <input type="number" id="bmi" name="bmi" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="hba1c">HbA1c Level</label>
+                <input type="number" id="hba1c" name="hba1c" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="blood-glucose">Blood Glucose Level</label>
+                <input type="number" id="blood-glucose" name="blood_glucose" required>
+            </div>
+            <div class="input-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="smoking">Smoking History</label>
+                <select id="smoking" name="smoking">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <button type="button" class="predict-button" onclick="predictRisk()">Predict</button>
+
+        </form>
+        <div id="output" class="output" style="display: none;"></div>
+        <div class="description">
+            <h2>Parameter Descriptions</h2>
+            <ul>
+                <li><strong>Age:</strong> The age of the individual in years.</li>
+                <li><strong>BMI:</strong> Body Mass Index, a measure of body fat based on height and weight.</li>
+                <li><strong>HbA1c Level:</strong> Average blood glucose level over the past 2-3 months.</li>
+                <li><strong>Blood Glucose Level:</strong> Current blood glucose level in mg/dL.</li>
+                <li><strong>Gender:</strong> The gender of the individual (Male or Female).</li>
+                <li><strong>Smoking History:</strong> Indicates if the individual has a history of smoking.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>
