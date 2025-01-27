@@ -43,7 +43,7 @@ Before running the project, ensure you have:
 ## Installation and Setup
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/diabetes-prediction-webapp.git
+    https://github.com/subhojitpramanick/diabetes_prediction-.git
     cd diabetes-prediction-webapp
     ```
 
