@@ -4,62 +4,398 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Risk Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Diabetes Risk Prediction</h1>
-        <form id="prediction-form">
-            <div class="input-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" required>
+    <div class="main-container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-heartbeat me-2 pulse"></i>DiabetesPredict
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#history"><i class="fas fa-history me-1"></i> History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resources"><i class="fas fa-book-medical me-1"></i> Resources</a>
+                        </li>
+                        <li class="nav-item theme-toggle-wrapper">
+                            <label class="theme-toggle">
+                                <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <i id="toggle-icon" class="fas fa-sun toggle-icon"></i>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="bmi">BMI</label>
-                <input type="number" id="bmi" name="bmi" step="0.1" required>
-            </div>
-            <div class="input-group">
-                <label for="hba1c">HbA1c Level</label>
-                <input type="number" id="hba1c" name="hba1c" step="0.1" required>
-            </div>
-            <div class="input-group">
-                <label for="blood-glucose">Blood Glucose Level</label>
-                <input type="number" id="blood-glucose" name="blood_glucose" required>
-            </div>
-            <div class="input-group">
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="smoking">Smoking History</label>
-                <select id="smoking" name="smoking">
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
-                </select>
-            </div>
-            <button type="button" class="predict-button" onclick="predictRisk()">Predict</button>
+        </nav>
 
-        </form>
-        <div id="output" class="output" style="display: none;"></div>
-        <div class="description">
-            <h2>Parameter Descriptions</h2>
-            <ul>
-                <li><strong>Age:</strong> The age of the individual in years.</li>
-                <li><strong>BMI:</strong> Body Mass Index, a measure of body fat based on height and weight.</li>
-                <li><strong>HbA1c Level:</strong> Average blood glucose level over the past 2-3 months.</li>
-                <li><strong>Blood Glucose Level:</strong> Current blood glucose level in mg/dL.</li>
-                <li><strong>Gender:</strong> The gender of the individual (Male or Female).</li>
-                <li><strong>Smoking History:</strong> Indicates if the individual has a history of smoking.</li>
-            </ul>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="app-card shadow-lg">
+                        <div class="app-header text-center">
+                            <div class="float mb-2">
+                                <img src="https://img.icons8.com/color/96/000000/diabetes.png" alt="Diabetes Icon" width="80" height="80">
+                            </div>
+                            <h1 class="display-5 fw-bold">Diabetes Risk Prediction</h1>
+                            <p class="lead">Enter your health parameters to assess your diabetes risk</p>
+                            <div class="progress mb-4" style="height: 4px;">
+                                <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <form id="prediction-form" class="needs-validation" novalidate>
+                                    <div class="parameter-card mb-3 fade-in" style="animation-delay: 0.1s;">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="parameter-icon">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                                <label for="age" class="form-label mb-0 ms-2">Age</label>
+                                                <i class="fas fa-info-circle ms-auto info-icon" data-bs-toggle="tooltip" title="Your age in years"></i>
+                                            </div>
+                                            <input type="number" class="form-control" id="age" name="age" min="1" max="120" required>
+                                            <div class="form-text">Age is a significant risk factor for Type 2 diabetes.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="parameter-card mb-3 fade-in" style="animation-delay: 0.2s;">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="parameter-icon">
+                                                    <i class="fas fa-weight"></i>
+                                                </div>
+                                                <label for="bmi" class="form-label mb-0 ms-2">BMI</label>
+                                                <i class="fas fa-info-circle ms-auto info-icon" data-bs-toggle="tooltip" title="Body Mass Index based on height and weight"></i>
+                                            </div>
+                                            <input type="number" class="form-control" id="bmi" name="bmi" step="0.1" min="10" max="50" required>
+                                            <div class="form-text">BMI above 25 increases diabetes risk.</div>
+                                            <div class="bmi-calculator-link mt-2">
+                                                <a href="#" onclick="showBmiCalculator()">
+                                                    <i class="fas fa-calculator me-1"></i> Calculate my BMI
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="parameter-card mb-3 fade-in" style="animation-delay: 0.3s;">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="parameter-icon">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                                <label for="hba1c" class="form-label mb-0 ms-2">HbA1c Level</label>
+                                                <i class="fas fa-info-circle ms-auto info-icon" data-bs-toggle="tooltip" title="Average blood glucose level over past 2-3 months"></i>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="hba1c" name="hba1c" step="0.1" min="4" max="15" required>
+                                                <button class="btn btn-outline-secondary" type="button" onclick="showHbA1cCalculator()">
+                                                    <i class="fas fa-calculator"></i> Calculate
+                                                </button>
+                                            </div>
+                                            <div class="form-text">Don't know your HbA1c? Use our calculator to estimate it.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="parameter-card mb-3 fade-in" style="animation-delay: 0.4s;">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="parameter-icon">
+                                                    <i class="fas fa-tint"></i>
+                                                </div>
+                                                <label for="blood-glucose" class="form-label mb-0 ms-2">Blood Glucose Level</label>
+                                                <i class="fas fa-info-circle ms-auto info-icon" data-bs-toggle="tooltip" title="Current blood glucose level in mg/dL"></i>
+                                            </div>
+                                            <input type="number" class="form-control" id="blood-glucose" name="blood_glucose" min="70" max="500" required>
+                                            <div class="form-text">Fasting glucose ≥ 126 mg/dL suggests diabetes.</div>
+                                            <div class="glucose-ranges mt-2">
+                                                <div class="d-flex justify-content-between ranges">
+                                                    <span class="normal"><i class="fas fa-check-circle me-1"></i>Normal</span>
+                                                    <span class="prediabetic"><i class="fas fa-exclamation-triangle me-1"></i>Prediabetic</span>
+                                                    <span class="diabetic"><i class="fas fa-exclamation-circle me-1"></i>Diabetic</span>
+                                                </div>
+                                                <div class="progress mt-1" style="height: 6px;">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 40%" title="70-99 mg/dL"></div>
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" title="100-125 mg/dL"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" title="126+ mg/dL"></div>
+                                                </div>
+                                                <div class="d-flex justify-content-between small text-muted mt-1">
+                                                    <span>70</span>
+                                                    <span>100</span>
+                                                    <span>126</span>
+                                                    <span>300+</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="parameter-card mb-3 fade-in" style="animation-delay: 0.5s;">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="parameter-icon">
+                                                    <i class="fas fa-venus-mars"></i>
+                                                </div>
+                                                <label for="gender" class="form-label mb-0 ms-2">Gender</label>
+                                                <i class="fas fa-info-circle ms-auto info-icon" data-bs-toggle="tooltip" title="Your biological sex"></i>
+                                            </div>
+                                            <select class="form-select" id="gender" name="gender" required>
+                                                <option value="" selected disabled>Select gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <div class="form-text">Men have a slightly higher risk of diabetes.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="parameter-card mb-3 fade-in" style="animation-delay: 0.6s;">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="parameter-icon">
+                                                    <i class="fas fa-smoking"></i>
+                                                </div>
+                                                <label for="smoking" class="form-label mb-0 ms-2">Smoking History</label>
+                                                <i class="fas fa-info-circle ms-auto info-icon" data-bs-toggle="tooltip" title="Whether you have a history of smoking"></i>
+                                            </div>
+                                            <div class="btn-group w-100" role="group">
+                                                <input type="radio" class="btn-check" name="smoking" id="smoking-no" value="No" required>
+                                                <label class="btn btn-outline-primary" for="smoking-no">No</label>
+                                                
+                                                <input type="radio" class="btn-check" name="smoking" id="smoking-yes" value="Yes">
+                                                <label class="btn btn-outline-primary" for="smoking-yes">Yes</label>
+                                            </div>
+                                            <div class="form-text">Smoking increases diabetes risk by 30-40%.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-3 fade-in" style="animation-delay: 0.7s;">
+                                <button type="button" class="btn btn-primary btn-lg predict-button" onclick="predictRisk()">
+                                    <i class="fas fa-calculator me-2"></i>Predict My Risk
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="loading" class="text-center mt-4" style="display: none;">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-3">Analyzing your data...</p>
+                        </div>
+
+                        <div id="output" class="result-card mt-4" style="display: none;">
+                            <div class="card-body text-center">
+                                <h3 class="result-title">Your Prediction Result</h3>
+                                <div id="result-content" class="mt-3"></div>
+                                <div id="result-explanation" class="mt-3"></div>
+                                <button id="save-result" class="btn btn-outline-primary mt-3">
+                                    <i class="fas fa-save me-2"></i>Save Result
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div id="history" class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="app-card shadow-lg">
+                        <h2 class="text-center mb-4"><i class="fas fa-history me-2"></i>Prediction History</h2>
+                        <div id="history-list" class="history-container">
+                            <p class="text-center text-muted">Your prediction history will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div id="resources" class="row mt-5 mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="app-card shadow-lg">
+                        <h2 class="text-center mb-4"><i class="fas fa-book-medical me-2"></i>Diabetes Resources</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="resource-card h-100 fade-in">
+                                    <div class="card-body">
+                                        <h5><i class="fas fa-info-circle me-2"></i>What is Diabetes?</h5>
+                                        <p>Diabetes is a chronic health condition that affects how your body turns food into energy. Learn about types, causes, and symptoms.</p>
+                                        <a href="https://en.wikipedia.org/wiki/Diabetes" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="resource-card h-100 fade-in">
+                                    <div class="card-body">
+                                        <h5><i class="fas fa-utensils me-2"></i>Diabetes Diet</h5>
+                                        <p>Discover healthy eating patterns that can help manage blood sugar levels and reduce the risk of diabetes complications.</p>
+                                        <a href="https://www.diabetes.org/healthy-living/recipes-nutrition" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="resource-card h-100 fade-in">
+                                    <div class="card-body">
+                                        <h5><i class="fas fa-running me-2"></i>Physical Activity</h5>
+                                        <p>Regular physical activity can help control blood sugar levels and reduce the risk of heart disease and nerve damage.</p>
+                                        <a href="https://www.diabetes.org/healthy-living/fitness" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="resource-card h-100 fade-in">
+                                    <div class="card-body">
+                                        <h5><i class="fas fa-stethoscope me-2"></i>Prevention Tips</h5>
+                                        <p>Learn about lifestyle changes that can help prevent or delay the onset of type 2 diabetes.</p>
+                                        <a href="https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="risk-factors-container mt-4">
+                            <h4 class="text-center mb-3">Common Risk Factors</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="risk-factor-card text-center">
+                                        <div class="icon-container mb-2">
+                                            <i class="fas fa-dna"></i>
+                                        </div>
+                                        <h6>Family History</h6>
+                                        <p class="small">Having a parent or sibling with diabetes increases your risk</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="risk-factor-card text-center">
+                                        <div class="icon-container mb-2">
+                                            <i class="fas fa-weight"></i>
+                                        </div>
+                                        <h6>Overweight/Obesity</h6>
+                                        <p class="small">Higher BMI is associated with insulin resistance</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="risk-factor-card text-center">
+                                        <div class="icon-container mb-2">
+                                            <i class="fas fa-heartbeat"></i>
+                                        </div>
+                                        <h6>High Blood Pressure</h6>
+                                        <p class="small">Hypertension is linked to increased diabetes risk</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt-auto py-3">
+            <div class="container text-center">
+                <span>© 2025 All rights reserved by Subhojit Pramanick | <a href="https://github.com/subhojitpramanick/diabetes_prediction-.git" class="text-decoration-none" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a></span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- HbA1c Calculator Modal -->
+    <div class="modal fade" id="hba1cCalculatorModal" tabindex="-1" aria-labelledby="hba1cCalculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hba1cCalculatorModalLabel">
+                        <i class="fas fa-calculator me-2"></i>HbA1c Calculator
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Estimate your HbA1c level based on average blood glucose:</p>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="avg-blood-glucose" placeholder="Average Blood Glucose">
+                        <label for="avg-blood-glucose">Average Blood Glucose (mg/dL)</label>
+                    </div>
+                    <div id="hba1c-result" class="alert alert-info mt-3" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="calculateHbA1c()">Calculate</button>
+                    <button type="button" class="btn btn-success" onclick="useHbA1c()" style="display: none;" id="use-hba1c-btn">Use This Value</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BMI Calculator Modal -->
+    <div class="modal fade" id="bmiCalculatorModal" tabindex="-1" aria-labelledby="bmiCalculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bmiCalculatorModalLabel">
+                        <i class="fas fa-calculator me-2"></i>BMI Calculator
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="height" class="form-label">Height</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="height" placeholder="Height">
+                            <select class="form-select" id="height-unit">
+                                <option value="cm">cm</option>
+                                <option value="in">inches</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="weight" class="form-label">Weight</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="weight" placeholder="Weight">
+                            <select class="form-select" id="weight-unit">
+                                <option value="kg">kg</option>
+                                <option value="lb">pounds</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="bmi-result" class="alert alert-info mt-3" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate</button>
+                    <button type="button" class="btn btn-success" onclick="useBMI()" style="display: none;" id="use-bmi-btn">Use This Value</button>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <!-- Custom JS -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-
-
+    <script src="{{ url_for('static', filename='theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='hba1c_calculator.js') }}"></script>
 </body>
 </html>

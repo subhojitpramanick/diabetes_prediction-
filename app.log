@@ -1,0 +1,170 @@
+2025-04-11 18:10:17,826 - root - INFO - Model and dependencies loaded successfully
+2025-04-11 18:10:17,829 - root - INFO - Starting Diabetes Prediction App on port 5000 with debug=False
+2025-04-11 18:10:17,883 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-11 18:10:17,884 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 18:10:25,685 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:25] "GET /?ide_webview_request_time=1744375225545 HTTP/1.1" 200 -
+2025-04-11 18:10:25,824 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:25] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-11 18:10:25,836 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:25] "GET /static/script.js HTTP/1.1" 200 -
+2025-04-11 18:10:36,079 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:36] "GET / HTTP/1.1" 200 -
+2025-04-11 18:10:36,255 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:36] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-11 18:10:36,307 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:36] "GET /static/script.js HTTP/1.1" 200 -
+2025-04-11 18:10:37,008 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:10:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-11 18:12:11,760 - root - INFO - Request 20250411181211-759: Received prediction request
+2025-04-11 18:12:11,914 - root - INFO - Request 20250411181211-759: Prediction completed in 155.67ms. Result: Diabetic
+2025-04-11 18:12:11,916 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:12:11] "POST /predict HTTP/1.1" 200 -
+2025-04-11 18:17:35,724 - root - INFO - Model and dependencies loaded successfully
+2025-04-11 18:17:35,726 - root - INFO - Starting Diabetes Prediction App on port 5000 with debug=False
+2025-04-11 18:17:35,783 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-11 18:17:35,784 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 18:18:03,293 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:18:03] "GET / HTTP/1.1" 200 -
+2025-04-11 18:18:03,409 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:18:03] "GET /static/theme.js HTTP/1.1" 200 -
+2025-04-11 18:18:03,413 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:18:03] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-11 18:18:03,414 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:18:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-04-11 18:19:15,608 - root - INFO - Request 20250411181915-608: Received prediction request
+2025-04-11 18:19:15,634 - root - INFO - Request 20250411181915-608: Prediction completed in 25.89ms. Result: Diabetic
+2025-04-11 18:19:15,635 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:19:15] "POST /predict HTTP/1.1" 200 -
+2025-04-11 18:26:37,230 - root - INFO - Model and dependencies loaded successfully
+2025-04-11 18:26:37,233 - root - INFO - Starting Diabetes Prediction App on port 5000 with debug=False
+2025-04-11 18:26:37,256 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-11 18:26:37,256 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 18:26:46,427 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:26:46] "GET / HTTP/1.1" 200 -
+2025-04-11 18:26:46,526 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:26:46] "GET /static/hba1c_calculator.js HTTP/1.1" 200 -
+2025-04-11 18:26:46,527 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:26:46] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-11 18:26:46,532 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:26:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-04-11 18:26:46,537 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:26:46] "[36mGET /static/theme.js HTTP/1.1[0m" 304 -
+2025-04-11 18:29:50,177 - root - INFO - Model and dependencies loaded successfully
+2025-04-11 18:29:50,179 - root - INFO - Starting Diabetes Prediction App on port 5000 with debug=False
+2025-04-11 18:29:50,201 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-11 18:29:50,202 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 18:29:53,711 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:29:53] "GET / HTTP/1.1" 200 -
+2025-04-11 18:29:53,810 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:29:53] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-04-11 18:29:53,811 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:29:53] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-11 18:29:53,817 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:29:53] "[36mGET /static/hba1c_calculator.js HTTP/1.1[0m" 304 -
+2025-04-11 18:29:53,818 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:29:53] "[36mGET /static/theme.js HTTP/1.1[0m" 304 -
+2025-04-11 18:31:12,773 - root - INFO - Request 20250411183112-773: Received prediction request
+2025-04-11 18:31:12,796 - root - INFO - Request 20250411183112-773: Prediction completed in 22.93ms. Result: Non-Diabetic
+2025-04-11 18:31:12,797 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:31:12] "POST /predict HTTP/1.1" 200 -
+2025-04-11 18:32:59,036 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:32:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-04-11 18:35:07,616 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:35:07] "GET / HTTP/1.1" 200 -
+2025-04-11 18:35:07,659 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:35:07] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-11 18:35:07,660 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:35:07] "GET /static/script.js HTTP/1.1" 200 -
+2025-04-11 18:35:07,663 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:35:07] "GET /static/theme.js HTTP/1.1" 200 -
+2025-04-11 18:35:07,665 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:35:07] "GET /static/hba1c_calculator.js HTTP/1.1" 200 -
+2025-04-11 18:36:26,835 - root - INFO - Model and dependencies loaded successfully
+2025-04-11 18:36:26,837 - root - INFO - Starting Diabetes Prediction App on port 5000 with debug=False
+2025-04-11 18:36:26,861 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-11 18:36:26,862 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 18:36:30,629 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:36:30] "GET / HTTP/1.1" 200 -
+2025-04-11 18:36:30,727 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:36:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-04-11 18:36:30,731 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:36:30] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-04-11 18:36:30,738 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:36:30] "[36mGET /static/hba1c_calculator.js HTTP/1.1[0m" 304 -
+2025-04-11 18:36:30,739 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 18:36:30] "[36mGET /static/theme.js HTTP/1.1[0m" 304 -
+2025-04-13 12:02:46,511 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:04:50,325 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:04:50,435 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-13 12:04:50,435 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 12:04:50,439 - werkzeug - INFO -  * Restarting with stat
+2025-04-13 12:04:52,928 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:04:52,948 - werkzeug - WARNING -  * Debugger is active!
+2025-04-13 12:04:52,952 - werkzeug - INFO -  * Debugger PIN: 116-797-424
+2025-04-13 12:05:55,121 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:05:55] "GET / HTTP/1.1" 200 -
+2025-04-13 12:05:55,247 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:05:55] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-13 12:05:55,251 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:05:55] "GET /static/theme.js HTTP/1.1" 200 -
+2025-04-13 12:05:55,251 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:05:55] "GET /static/script.js HTTP/1.1" 200 -
+2025-04-13 12:05:55,252 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:05:55] "GET /static/hba1c_calculator.js HTTP/1.1" 200 -
+2025-04-13 12:05:55,759 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:05:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-13 12:07:25,644 - root - INFO - Request 20250413120725-644: Received prediction request
+2025-04-13 12:07:25,693 - root - INFO - Request 20250413120725-644: Prediction completed in 49.08ms. Result: Non-Diabetic
+2025-04-13 12:07:25,715 - root - ERROR - Request 20250413120725-644: Failed to save prediction to database: (sqlite3.OperationalError) table prediction_record has no column named timestamp
+[SQL: INSERT INTO prediction_record (user_id, prediction_result, age, bmi, hba1c, blood_glucose, gender, smoking, confidence, created_at, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (None, 'Non-Diabetic', 18.0, 24.2, 6.5, 140.0, 'Male', 'Yes', '100.0%', '2025-04-13 06:37:25.713308', '2025-04-13 06:37:25.713320')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-13 12:07:25,718 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:07:25] "POST /predict HTTP/1.1" 200 -
+2025-04-13 12:09:46,614 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:09:46] "GET / HTTP/1.1" 200 -
+2025-04-13 12:09:46,657 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:09:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-04-13 12:09:46,661 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:09:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-04-13 12:09:46,665 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:09:46] "[36mGET /static/theme.js HTTP/1.1[0m" 304 -
+2025-04-13 12:09:46,666 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:09:46] "[36mGET /static/hba1c_calculator.js HTTP/1.1[0m" 304 -
+2025-04-13 12:10:13,995 - root - INFO - Request 20250413121013-994: Received prediction request
+2025-04-13 12:10:14,023 - root - INFO - Request 20250413121013-994: Prediction completed in 28.41ms. Result: Diabetic
+2025-04-13 12:10:14,025 - root - ERROR - Request 20250413121013-994: Failed to save prediction to database: (sqlite3.OperationalError) table prediction_record has no column named timestamp
+[SQL: INSERT INTO prediction_record (user_id, prediction_result, age, bmi, hba1c, blood_glucose, gender, smoking, confidence, created_at, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (None, 'Diabetic', 56.0, 21.0, 7.0, 180.0, 'Male', 'No', '92.0%', '2025-04-13 06:40:14.025351', '2025-04-13 06:40:14.025358')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-13 12:10:14,027 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:10:14] "POST /predict HTTP/1.1" 200 -
+2025-04-13 12:10:32,786 - root - INFO - Request 20250413121032-786: Received prediction request
+2025-04-13 12:10:32,812 - root - INFO - Request 20250413121032-786: Prediction completed in 26.12ms. Result: Diabetic
+2025-04-13 12:10:32,814 - root - ERROR - Request 20250413121032-786: Failed to save prediction to database: (sqlite3.OperationalError) table prediction_record has no column named timestamp
+[SQL: INSERT INTO prediction_record (user_id, prediction_result, age, bmi, hba1c, blood_glucose, gender, smoking, confidence, created_at, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (None, 'Diabetic', 78.0, 21.0, 7.0, 180.0, 'Male', 'No', '96.0%', '2025-04-13 06:40:32.814042', '2025-04-13 06:40:32.814049')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-13 12:10:32,816 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:10:32] "POST /predict HTTP/1.1" 200 -
+2025-04-13 12:10:40,014 - root - INFO - Request 20250413121040-14: Received prediction request
+2025-04-13 12:10:40,039 - root - INFO - Request 20250413121040-14: Prediction completed in 24.29ms. Result: Diabetic
+2025-04-13 12:10:40,040 - root - ERROR - Request 20250413121040-14: Failed to save prediction to database: (sqlite3.OperationalError) table prediction_record has no column named timestamp
+[SQL: INSERT INTO prediction_record (user_id, prediction_result, age, bmi, hba1c, blood_glucose, gender, smoking, confidence, created_at, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (None, 'Diabetic', 10.0, 21.0, 7.0, 180.0, 'Male', 'No', '97.0%', '2025-04-13 06:40:40.040066', '2025-04-13 06:40:40.040069')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-13 12:10:40,041 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:10:40] "POST /predict HTTP/1.1" 200 -
+2025-04-13 12:10:53,041 - root - INFO - Request 20250413121053-41: Received prediction request
+2025-04-13 12:10:53,064 - root - INFO - Request 20250413121053-41: Prediction completed in 22.38ms. Result: Non-Diabetic
+2025-04-13 12:10:53,068 - root - ERROR - Request 20250413121053-41: Failed to save prediction to database: (sqlite3.OperationalError) table prediction_record has no column named timestamp
+[SQL: INSERT INTO prediction_record (user_id, prediction_result, age, bmi, hba1c, blood_glucose, gender, smoking, confidence, created_at, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (None, 'Non-Diabetic', 10.0, 21.0, 5.0, 100.0, 'Male', 'No', '100.0%', '2025-04-13 06:40:53.068482', '2025-04-13 06:40:53.068488')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-13 12:10:53,069 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:10:53] "POST /predict HTTP/1.1" 200 -
+2025-04-13 12:12:32,457 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:12:32,498 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-13 12:12:32,499 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 12:12:32,501 - werkzeug - INFO -  * Restarting with stat
+2025-04-13 12:12:34,401 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:12:34,420 - werkzeug - WARNING -  * Debugger is active!
+2025-04-13 12:12:34,422 - werkzeug - INFO -  * Debugger PIN: 116-797-424
+2025-04-13 12:12:38,970 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:12:38] "GET / HTTP/1.1" 200 -
+2025-04-13 12:12:39,090 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:12:39] "GET /static/script.js HTTP/1.1" 200 -
+2025-04-13 12:12:39,093 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:12:39] "[36mGET /static/theme.js HTTP/1.1[0m" 304 -
+2025-04-13 12:12:39,096 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:12:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-04-13 12:12:39,097 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:12:39] "[36mGET /static/hba1c_calculator.js HTTP/1.1[0m" 304 -
+2025-04-13 12:13:15,240 - root - INFO - Request 20250413121315-240: Received prediction request
+2025-04-13 12:13:15,268 - root - INFO - Request 20250413121315-240: Prediction completed in 28.58ms. Result: Non-Diabetic
+2025-04-13 12:13:15,282 - root - ERROR - Request 20250413121315-240: Failed to save prediction to database: (sqlite3.OperationalError) table prediction_record has no column named timestamp
+[SQL: INSERT INTO prediction_record (user_id, prediction_result, age, bmi, hba1c, blood_glucose, gender, smoking, confidence, created_at, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (None, 'Non-Diabetic', 23.0, 23.0, 6.0, 125.0, 'Female', 'Yes', '100.0%', '2025-04-13 06:43:15.281571', '2025-04-13 06:43:15.281577')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-13 12:13:15,286 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:13:15] "POST /predict HTTP/1.1" 200 -
+2025-04-13 12:16:35,689 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:16:35,726 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.71.8:5000
+2025-04-13 12:16:35,727 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 12:16:35,731 - werkzeug - INFO -  * Restarting with stat
+2025-04-13 12:16:37,818 - root - INFO - Model and dependencies loaded successfully
+2025-04-13 12:16:37,837 - werkzeug - WARNING -  * Debugger is active!
+2025-04-13 12:16:37,841 - werkzeug - INFO -  * Debugger PIN: 116-797-424
+2025-04-13 12:16:40,611 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:16:40] "GET / HTTP/1.1" 200 -
+2025-04-13 12:16:40,721 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:16:40] "GET /static/script.js HTTP/1.1" 200 -
+2025-04-13 12:16:40,726 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:16:40] "GET /static/style.css HTTP/1.1" 200 -
+2025-04-13 12:16:40,732 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:16:40] "[36mGET /static/theme.js HTTP/1.1[0m" 304 -
+2025-04-13 12:16:40,732 - werkzeug - INFO - 192.168.71.8 - - [13/Apr/2025 12:16:40] "[36mGET /static/hba1c_calculator.js HTTP/1.1[0m" 304 -
