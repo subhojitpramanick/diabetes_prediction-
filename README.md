@@ -104,7 +104,7 @@ The application uses SQLite to store prediction history. The database file is cr
 
 ## Contributors
 
-- Your Name <your-email@example.com>
+- Subhojit Pramanick<subhojitpramanick.allwork@gmail.com>
 
 ## Acknowledgements
 
